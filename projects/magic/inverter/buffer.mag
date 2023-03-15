@@ -1,0 +1,13 @@
+magic
+tech sky130A
+timestamp 1670532962
+use inverter  inverter_0
+timestamp 1670361148
+transform 1 0 130 0 1 135
+box -140 -150 95 190
+<< labels >>
+rlabel space -10 15 -10 15 7 A
+rlabel space 225 15 225 15 3 Y
+rlabel space -10 245 -10 245 7 VP
+rlabel space -10 90 -10 90 7 VN
+<< end >>

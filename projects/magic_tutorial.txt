@@ -1,0 +1,58 @@
+magic tutorial
+box 
+grid 0.05um 0.05um setta griglia di 0.05x0.05 micron
+grid spegne griglia
+snap user attacca movimento alla griglia
+drc style drc(full) abilito tutte le drc
+drc why (mi dice causa errore)
+
+paint poly
+erase poly
+paint li
+paint ndiff
+
+
+---inverter
+paint poly
+paint ndiff
+paint li
+paint ndc
+paint psd
+paint li
+paint psc
+seleziono tutto il transistor col tasto s
+select area
+copy n 140
+paint nwell
+allargo un po e rifaccio nwell
+select area
+move n 1 (ripeto comando per spostare p transistor in alto) 
+paint poly
+paint li
+paint pc
+paint m1( l'ho fatto piu' piccolo per vedere che succede quando confronto col circuito)
+paint m1
+paint mcon
+label A w (clicco destro sinistro sul punto dove voglio label)
+port make 1
+label Y e
+port make 2
+label VP w m1
+port make 3
+label VN w m1
+port make 4
+save inverter
+da menu faccio new cell (la chiamo buffer)
+grid 0.05um 0.05um
+getcell inverter
+x / shift x mostro / nascondo contenuto cella
+(questo sul buffer)
+label A w
+label Y e
+label VP w m1
+label VN w
+save
+extract all
+ext2spice hierarchy on
+ext2spice scale off
+ext2spice

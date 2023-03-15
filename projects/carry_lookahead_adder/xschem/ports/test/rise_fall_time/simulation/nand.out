@@ -1,0 +1,48 @@
+
+Note: No compatibility mode selected!
+
+
+Circuit: ** sch_path:
+
+binary raw file "/home/peppe/Scrivania/vlsi/circuit-simulation/projects/carry_lookahead_adder/xschem/ports/test/rise_fall_time/simulation/nand.raw"
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Note: include: has no value, DC 0 assumed
+No. of Data Columns : 21  
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+net1                                       1.8
+net2                                         0
+x1.net1                                1.66415
+net3                                       1.8
+sky130_fd_pr__esd_nfet_05v0_nvt.pm3               0
+                                             0
+v2#branch                                    0
+v1#branch                         -2.10579e-12
+
+
+No. of Data Rows : 71
+
+No .measure possible in batch mode (-b) with -r rawfile set!
+Remove rawfile and use .print or .plot or
+select interactive mode (optionally with .control section) instead.
+
+
+Total analysis time (seconds) = 0.001
+
+Total elapsed time (seconds) = 5.326 
+
+Total DRAM available = 15650.727 MB.
+DRAM currently available = 10922.277 MB.
+Maximum ngspice program size =  352.148 MB.
+Current ngspice program size =  333.074 MB.
+
+Shared ngspice pages =   11.488 MB.
+Text (code) pages =    5.297 MB.
+Stack = 0 bytes.
+Library pages =  330.250 MB.
+

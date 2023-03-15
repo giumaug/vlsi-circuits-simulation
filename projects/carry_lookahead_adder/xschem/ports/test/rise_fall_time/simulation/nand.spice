@@ -1,0 +1,50 @@
+** sch_path:
+*+ /home/peppe/Scrivania/vlsi/circuit-simulation/projects/carry_lookahead_adder/xschem/ports/test/rise_fall_time/nand.sch
+**.subckt nand
+V1 net1 GND 1.8
+.save i(v1)
+V2 net2 GND pwl 0ps 0 100ps 0 150ps 1.8 500ps 1.8 550ps 0 1ns 0
+.save i(v2)
+x1 net1 net2 net3 net1 GND nand
+**** begin user architecture code
+
+.lib /usr/local/share/sky130_fd_pr/models/sky130.lib.spice tt
+.tran 20p 1n
+.save all
+
+
+.measure tran tpdr TRIG v(net2) VAL=0.9 FALL=1 TARG v(net3) VAL=0.9 RISE=1
+
+
+.measure tran tpdf TRIG v(net2) VAL=0.9 RISE=1 TARG v(net3) VAL=0.9 FALL=1
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  nand.sym # of pins=5
+** sym_path:
+*+ /home/peppe/Scrivania/vlsi/circuit-simulation/projects/carry_lookahead_adder/xschem/ports/nand.sym
+** sch_path:
+*+ /home/peppe/Scrivania/vlsi/circuit-simulation/projects/carry_lookahead_adder/xschem/ports/nand.sch
+.subckt nand in1 in2 out vdd vss
+*.ipin in1
+*.ipin in2
+*.ipin vdd
+*.ipin vss
+*.opin out
+XM1 net1 in2 vss vss sky130_fd_pr__nfet_01v8 L=0.15 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM2 out in1 net1 net1 sky130_fd_pr__nfet_01v8 L=0.15 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM6 out in1 vdd vdd sky130_fd_pr__pfet_01v8 L=0.15 W=3.8 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM3 out in2 vdd vdd sky130_fd_pr__pfet_01v8 L=0.15 W=3.8 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+.GLOBAL GND
+.end

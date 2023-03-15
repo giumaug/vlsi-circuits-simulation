@@ -1,0 +1,13 @@
+magic
+tech sky130A
+timestamp 1670532114
+use buffer  buffer_0
+timestamp 1670492650
+transform 1 0 4 0 1 45
+box -15 -35 455 305
+<< labels >>
+rlabel space -10 40 -10 40 7 A
+rlabel space 459 40 459 40 3 Y
+rlabel space -11 275 -11 275 7 VP
+rlabel space -11 115 -11 115 7 VN
+<< end >>

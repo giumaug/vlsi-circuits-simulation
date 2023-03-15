@@ -1,0 +1,12 @@
+pico 10-12
+giga 10+9
+
+ritardo = 60ps
+
+1000/x = 60
+
+1000 = 60x
+
+x = 1000/60 = 16.6
+
+Se considero un ritardo di propagazione (inteso come tempo effettivo per avere il segnale stabile) di 60ps, il limite in frequenza e' 16.6Ghz
