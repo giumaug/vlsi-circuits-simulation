@@ -1,4 +1,4 @@
-v {xschem version=3.1.0 file_version=1.2
+v {xschem version=3.4.2 file_version=1.2
 }
 G {}
 K {}
@@ -29,6 +29,6 @@ C {devices/gnd.sym} 240 -340 0 0 {name=l1 lab=GND}
 C {devices/vsource.sym} 150 -460 0 1 {name=v1 value="pwl 0 1.8"}
 C {devices/vsource.sym} 420 -390 0 0 {name=v2 value=0}
 C {devices/code_shown.sym} 810 -760 0 0 {name=spice only_toplevel=false value=".lib /opt/open_pdks/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
-.tran 20p 1n
+.tran 20p 10n
 .save all"}
-C {inverter.sym} 610 -460 0 0 {name=x1}
+C {/home/peppe/Desktop/vlsi/circuits-simulation/projects/carry_lookahead_adder/xschem/ports/inverter.sym} 610 -460 0 0 {name=x1}

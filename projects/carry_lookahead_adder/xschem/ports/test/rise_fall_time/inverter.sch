@@ -33,4 +33,4 @@ C {devices/code_shown.sym} 780 -530 0 0 {name=tpdf only_toplevel=false value=".m
 C {devices/code_shown.sym} 810 -760 0 0 {name=spice only_toplevel=false value=".lib /opt/open_pdks/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
 .tran 20p 1n
 .save all"}
-C {inverter.sym} 610 -460 0 0 {name=x1}
+C {/home/peppe/Scrivania/vlsi/circuits-simulation/projects/carry_lookahead_adder/xschem/ports/inverter.sym} 610 -460 0 0 {name=x1}

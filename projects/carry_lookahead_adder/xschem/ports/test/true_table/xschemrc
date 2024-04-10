@@ -3,5 +3,5 @@ set XSCHEM_LIBRARY_PATH {}
 append XSCHEM_LIBRARY_PATH :${XSCHEM_SHAREDIR}/xschem_library
 #append XSCHEM_LIBRARY_PATH :/opt/xschem/share/xschem/xschem_library
 append XSCHEM_LIBRARY_PATH :/opt/open_pdks/share/pdk/sky130A/libs.tech/xschem
-append XSCHEM_LIBRARY_PATH :/home/peppe/Scrivania/vlsi/circuit-simulation/projects/carry_lookahead_adder/xschem/ports
+append XSCHEM_LIBRARY_PATH :/home/peppe/Desktop/vlsi/circuit-simulation/projects/carry_lookahead_adder/xschem/ports
 

@@ -1,8 +1,0 @@
-Simulazione circuito:
-1)Da simulation->simulation-configure-tools: settare Ngspice
-2)Pulsante netlist
-3)Pulsante simultatr
-4)Da finestra di simulazione:
-4.1) Comando display per visualizzare correnti e tensioni disponibili
-4.2) ploy "nome funzione" per stampare grafico
-

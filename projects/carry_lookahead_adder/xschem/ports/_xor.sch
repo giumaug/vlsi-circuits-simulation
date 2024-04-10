@@ -24,7 +24,7 @@ lab=#net1}
 N 300 -50 340 -50 {
 lab=#net2}
 N 300 -160 340 -160 {
-lab=#net3}
+lab=vdd}
 N 240 -50 260 -50 {
 lab=-in1}
 N 240 -160 260 -160 {
@@ -32,21 +32,21 @@ lab=in1}
 N 300 -100 300 -80 {
 lab=#net2}
 N 300 -210 300 -190 {
-lab=#net3}
+lab=vdd}
 N 300 -80 340 -80 {
 lab=#net2}
 N 340 -80 340 -50 {
 lab=#net2}
 N 300 -190 340 -190 {
-lab=#net3}
+lab=vdd}
 N 340 -190 340 -160 {
-lab=#net3}
+lab=vdd}
 N 300 170 300 200 {
 lab=vss}
 N 300 -130 300 -100 {
 lab=#net2}
 N 550 80 550 110 {
-lab=#net4}
+lab=#net3}
 N 550 -20 550 20 {
 lab=out}
 N 550 140 590 140 {
@@ -56,31 +56,31 @@ lab=vss}
 N 550 170 590 170 {
 lab=vss}
 N 550 50 590 50 {
-lab=#net4}
+lab=#net3}
 N 590 50 590 80 {
-lab=#net4}
+lab=#net3}
 N 550 80 590 80 {
-lab=#net4}
+lab=#net3}
 N 550 -50 590 -50 {
-lab=#net5}
+lab=#net2}
 N 550 -160 590 -160 {
-lab=#net3}
+lab=vdd}
 N 550 -100 550 -80 {
-lab=#net5}
+lab=#net2}
 N 550 -210 550 -190 {
-lab=#net3}
+lab=vdd}
 N 550 -80 590 -80 {
-lab=#net5}
+lab=#net2}
 N 590 -80 590 -50 {
-lab=#net5}
+lab=#net2}
 N 550 -190 590 -190 {
-lab=#net3}
+lab=vdd}
 N 590 -190 590 -160 {
-lab=#net3}
+lab=vdd}
 N 550 170 550 200 {
 lab=vss}
 N 550 -130 550 -100 {
-lab=#net5}
+lab=#net2}
 N 120 -160 240 -160 {
 lab=in1}
 N 170 -160 170 0 {
@@ -104,24 +104,35 @@ lab=out}
 N 300 200 550 200 {
 lab=vss}
 N 300 -210 550 -210 {
-lab=#net3}
+lab=vdd}
 N 550 -0 660 -0 {
 lab=out}
 N 420 -250 420 -210 {
-lab=#net3}
+lab=vdd}
 N 420 200 420 240 {
 lab=vss}
-N 470 140 510 140 {}
-N 470 -160 470 140 {}
-N 470 -160 510 -160 {}
-N 120 100 470 100 {}
-N 120 50 120 100 {}
-N 400 -50 510 -50 {}
-N 400 -50 400 190 {}
-N 160 190 400 190 {}
-N 120 140 260 140 {}
-N 160 140 160 190 {}
-N 300 -110 550 -110 {}
+N 470 140 510 140 {
+lab=in2}
+N 470 -160 470 140 {
+lab=in2}
+N 470 -160 510 -160 {
+lab=in2}
+N 120 100 470 100 {
+lab=in2}
+N 120 50 120 100 {
+lab=in2}
+N 400 -50 510 -50 {
+lab=-in2}
+N 400 -50 400 190 {
+lab=-in2}
+N 160 190 400 190 {
+lab=-in2}
+N 120 140 260 140 {
+lab=-in2}
+N 160 140 160 190 {
+lab=-in2}
+N 300 -110 550 -110 {
+lab=#net2}
 C {sky130_fd_pr/nfet_01v8.sym} 280 140 0 0 {name=M1
 L=0.15
 W=2
@@ -152,7 +163,7 @@ spiceprefix=X
 }
 C {sky130_fd_pr/pfet_01v8.sym} 280 -50 0 0 {name=M6
 L=0.15
-W=3.8
+W=4
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -166,7 +177,7 @@ spiceprefix=X
 }
 C {sky130_fd_pr/pfet_01v8.sym} 280 -160 0 0 {name=M3
 L=0.15
-W=3.8
+W=4
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -213,7 +224,7 @@ spiceprefix=X
 }
 C {sky130_fd_pr/pfet_01v8.sym} 530 -50 0 0 {name=M11
 L=0.15
-W=3.8
+W=4
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -227,7 +238,7 @@ spiceprefix=X
 }
 C {sky130_fd_pr/pfet_01v8.sym} 530 -160 0 0 {name=M12
 L=0.15
-W=3.8
+W=4
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
