@@ -1,0 +1,65 @@
+ANDOR
+
+v1 A1 GND pwl 0ps 1.8 1000ps 1.8 1010ps 0 
+*v1 A1 GND pwl 0 0ps 1000ps 0 1050ps 1.8
+v2 VDD GND pwl 0 1.8
+
+*Xinvc1 A1 _C1 VDD GND inv
+*Xinvc2 _C1 _C2 VDD GND inv
+**Xinvc3 _C2 _C3 VDD GND invc
+*Xnand1 _C2 VDD _OUT1 VDD GND nand
+*Xinv1 _OUT1 _OUT2 VDD GND inv 
+*Xnor1 GND _OUT2 _OUT3 VDD GND nor
+*Xinv2 _OUT3 OUT VDD GND inv
+*Xnand2 OUT VDD _OUT4 VDD GND nand
+
+Xinv1 A1 _OUT1 VDD GND inv
+Xinv2 _OUT1 _OUT2 VDD GND inv2
+Xinv3 _OUT2 _OUT3 VDD GND inv2
+Xinv4 _OUT3 _OUT4 VDD GND inv2
+Xinv5 _OUT4 _OUT5 VDD GND inv2
+Xinv6 _OUT5 _OUT6 VDD GND inv2
+
+
+*.measure tran out TRIG v(out) VAL=0.1 RISE=1 CROSS=LAST TARG v(out) VAL=1.79 RISE=1 CROSS=LAST
+*.measure tran _c2 TRIG v(_c2) VAL=0.1 RISE=1 CROSS=LAST TARG v(_c2) VAL=1.79 RISE=1 CROSS=LAST
+
+.measure tran out3 TRIG v(_out3) VAL=0.1 RISE=1 CROSS=LAST TARG v(_out3) VAL=1.79 RISE=1 CROSS=LAST
+.measure tran out5 TRIG v(_out5) VAL=0.1 RISE=1 CROSS=LAST TARG v(_out5) VAL=1.79 RISE=1 CROSS=LAST
+
+.lib /opt/open_pdks/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+.options method=gear
+.tran 1ps 3000ps
+.save all
+
+.subckt inv IN OUT VDD GND WN=1e+06u WP=2e+06u
+X0 OUT IN GND GND sky130_fd_pr__nfet_01v8 ad='W*L' pd='2*W+2*L' as='W*L' ps='2*W+2*L' W={WN} L=150000u
+X1 OUT IN VDD VDD sky130_fd_pr__pfet_01v8 ad='W*L' pd='2*W+2*L' as='W*L' ps='2*W+2*L' W={WP} L=150000u
+.ends
+
+.subckt inv2 IN OUT VDD GND WN=1e+06u WP=2e+06u
+X0 OUT IN GND GND sky130_fd_pr__nfet_01v8 ad='W*L' pd='2*W+2*L' as='W*L' ps='2*W+2*L' W={WN} L=150000u
+X1 OUT IN VDD VDD sky130_fd_pr__pfet_01v8 ad='W*L' pd='2*W+2*L' as='W*L' ps='2*W+2*L' W={WP} L=150000u
+.ends
+
+.subckt invc IN OUT VDD GND WN=5e+06u WP=10e+06u
+X0 OUT IN GND GND sky130_fd_pr__nfet_01v8 ad='W*L' pd='2*W+2*L' as='W*L' ps='2*W+2*L' W={WN} L=150000u
+X1 OUT IN VDD VDD sky130_fd_pr__pfet_01v8 ad='W*L' pd='2*W+2*L' as='W*L' ps='2*W+2*L' W={WP} L=150000u
+.ends
+
+.subckt nand IN1 IN2 OUT VDD GND WN=2e+06u WP=2e+06u
+X0 OUT IN1 VDD VDD sky130_fd_pr__pfet_01v8 ad='W*L' pd='2*W+2*L' as='W*L' ps='2*W+2*L' W={WP} L=150000u
+X1 OUT IN2 VDD VDD sky130_fd_pr__pfet_01v8 ad='W*L' pd='2*W+2*L' as='W*L' ps='2*W+2*L' W={WP} L=150000u
+X2 OUT IN1 C GND sky130_fd_pr__nfet_01v8 ad='W*L' pd='2*W+2*L' as='W*L' ps='2*W+2*L' W={WN} L=150000u
+X3 C IN2 GND GND sky130_fd_pr__nfet_01v8 ad='W*L' pd='2*W+2*L' as='W*L' ps='2*W+2*L' W={WN} L=150000u
+.ends
+
+.subckt nor IN1 IN2 OUT VDD GND WN=1e+06u WP=4e+06u
+X0 C IN1 VDD VDD sky130_fd_pr__pfet_01v8 ad='W*L' pd='2*W+2*L' as='W*L' ps='2*W+2*L' W={WP} L=150000u
+X1 OUT IN2 C VDD sky130_fd_pr__pfet_01v8 ad='W*L' pd='2*W+2*L' as='W*L' ps='2*W+2*L' W={WP} L=150000u
+X2 OUT IN1 GND GND sky130_fd_pr__nfet_01v8 ad='W*L' pd='2*W+2*L' as='W*L' ps='2*W+2*L' W={WN} L=150000u
+X3 OUT IN2 GND GND sky130_fd_pr__nfet_01v8 ad='W*L' pd='2*W+2*L' as='W*L' ps='2*W+2*L' W={WN} L=150000u
+.ends
+
+.GLOBAL GND
+.end

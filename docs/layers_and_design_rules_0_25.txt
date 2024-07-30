@@ -1,0 +1,23 @@
+rules:
+transistor 6x26
+diff 12x26
+contatti 7x7
+spazio contatti 3x3
+
+layers:
+pdiff
+ndiff
+poly
+li
+ndc (contatto ndiff - li)
+pdc (contatto pdiff - li)
+psd (subtrato p)
+nsd (substrato n)
+psc (contatto li - psd)
+nsc (contatto li - nsd)
+metal1
+mcon o viali (contatto li - metal1)
+pc (contatto li - poly)
+
+
+

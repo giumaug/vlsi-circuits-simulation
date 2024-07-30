@@ -1,0 +1,7 @@
+Utilizzare il comando:
+
+/opt/netgen/bin/netgen  lvs /home/peppe/Desktop/vlsi/circuits-simulation/projects/carry_lookahead_adder_std_cells/magic/lvs/adder_3_design.spice /home/peppe/Desktop/vlsi/circuits-simulation/projects/carry_lookahead_adder_std_cells/magic/lvs/adder_3_layout.spice nosetup
+
+Per avere shell bash mettere -batch
+
+/opt/netgen/bin/netgen -batch lvs /home/peppe/Desktop/vlsi/circuits-simulation/projects/carry_lookahead_adder_std_cells/magic/lvs/adder_3_design.spice /home/peppe/Desktop/vlsi/circuits-simulation/projects/carry_lookahead_adder_std_cells/magic/lvs/adder_3_layout.spice nosetup

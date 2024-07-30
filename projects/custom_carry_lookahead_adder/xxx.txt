@@ -1,0 +1,186 @@
+******
+** ngspice-41 : Circuit level simulation program
+** The U. C. Berkeley CAD Group
+** Copyright 1985-1994, Regents of the University of California.
+** Copyright 2001-2023, The ngspice team.
+** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html
+** Please file your bug-reports at http://ngspice.sourceforge.net/bugrep.html
+** Creation Date: Sat Aug 12 14:08:56 UTC 2023
+******
+
+Note: No compatibility mode selected!
+
+
+Circuit: adderx4
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+ci                                           0
+a4                                           0
+b4                                           0
+a3                                           0
+b3                                           0
+a2                                           0
+b2                                           0
+a1                                           0
+b1                                           0
+vdd                                          0
+xpg1.xxor1._out1                  -5.02295e-26
+xpg1.xxor1.xnand1.c                1.89935e-23
+xpg1.xxor1._out2                   1.05575e-27
+xpg1.xxor1.xnand2.c               -3.99223e-25
+xpg1.xxor1._out3                   1.05575e-27
+xpg1.xxor1.xnand3.c               -3.99223e-25
+p1                                -1.35608e-18
+xpg1.xxor1.xnand4.c                4.46319e-20
+xpg1.xand1._out1                  -5.02295e-26
+xpg1.xand1.xnand1.c                1.89935e-23
+g1                                 2.92751e-32
+xpg1.xxor2._out1                  -5.02295e-26
+xpg1.xxor2.xnand1.c                1.89935e-23
+xpg1.xxor2._out2                   1.05575e-27
+xpg1.xxor2.xnand2.c               -3.99223e-25
+xpg1.xxor2._out3                   1.05575e-27
+xpg1.xxor2.xnand3.c               -3.99223e-25
+p2                                -3.99053e-19
+xpg1.xxor2.xnand4.c                1.17492e-20
+xpg1.xand2._out1                  -6.24582e-26
+xpg1.xand2.xnand1.c                2.36178e-23
+g2                                 4.02712e-32
+xpg1.xxor3._out1                  -3.24696e-26
+xpg1.xxor3.xnand1.c                 1.2278e-23
+xpg1.xxor3._out2                   5.11739e-27
+xpg1.xxor3.xnand2.c               -1.93508e-24
+xpg1.xxor3._out3                   5.11739e-27
+xpg1.xxor3.xnand3.c               -1.93508e-24
+p3                                -1.28129e-18
+xpg1.xxor3.xnand4.c                1.45879e-19
+xpg1.xand3._out1                  -3.24696e-26
+xpg1.xand3.xnand1.c                 1.2278e-23
+g3                                -3.32998e-33
+xpg1.xxor4._out1                  -3.24696e-26
+xpg1.xxor4.xnand1.c                 1.2278e-23
+xpg1.xxor4._out2                   5.11739e-27
+xpg1.xxor4.xnand2.c               -1.93508e-24
+xpg1.xxor4._out3                   5.11739e-27
+xpg1.xxor4.xnand3.c               -1.93508e-24
+p4                                -1.28129e-18
+xpg1.xxor4.xnand4.c                1.45879e-19
+xpg1.xand4._out1                  -3.24696e-26
+xpg1.xand4.xnand1.c                 1.2278e-23
+g4                                -3.32998e-33
+xcarry1.xandor1.xand1._out1       -7.12717e-26
+xcarry1.xandor1.xand1.xnand1.c     2.69503e-23
+xcarry1.xandor1._out1             -2.53315e-31
+xcarry1.xandor1.xor1.xnor1.c        3.3483e-19
+xcarry1.xandor1.xor1._out1         9.71992e-19
+xcarry1._out1                     -1.20017e-18
+xcarry1.xandor2.xand1._out1       -4.74413e-24
+xcarry1.xandor2.xand1.xnand1.c     1.81064e-21
+xcarry1.xandor2._out1              1.73305e-26
+xcarry1.xandor2.xor1.xnor1.c      -3.16673e-19
+xcarry1.xandor2.xor1._out1         3.23649e-19
+xcarry1._out2                      -2.5727e-18
+xcarry1.xandor3.xand1._out1        1.84781e-23
+xcarry1.xandor3.xand1.xnand1.c    -6.30437e-21
+xcarry1.xandor3._out1               -1.766e-25
+xcarry1.xandor3.xor1.xnor1.c       9.97641e-19
+xcarry1.xandor3.xor1._out1        -4.69431e-19
+xcarry1._out3                     -2.59953e-19
+xcarry1.xand4._out1                5.85607e-26
+xcarry1.xand4.xnand1.c            -2.21437e-23
+xcarry1.xand4._out2               -2.14421e-26
+xcarry1.xand4.xnand2.c             8.10899e-24
+xcarry1.xand4.xnor.c                1.2714e-19
+xcarry1._out4                      4.58809e-19
+xcarry1.xandor4.xand1._out1        7.52663e-26
+xcarry1.xandor4.xand1.xnand1.c    -2.84612e-23
+xcarry1.xandor4._out1                1.843e-30
+xcarry1.xandor4.xor1.xnor1.c        2.0346e-19
+xcarry1.xandor4.xor1._out1         2.53138e-18
+co                                 7.54591e-19
+xadder1.xandor1.xand1._out1       -2.23763e-25
+xadder1.xandor1.xand1.xnand1.c     8.46129e-23
+xadder1.xandor1._out1             -3.17784e-31
+xadder1.xandor1.xor1.xnor1.c       9.54876e-19
+xadder1.xandor1.xor1._out1        -3.59154e-19
+xadder1._out1                     -9.81135e-19
+xadder1.xandor2.xand1._out1        4.96603e-25
+xadder1.xandor2.xand1.xnand1.c    -1.87803e-22
+xadder1.xandor2._out1             -3.11012e-30
+xadder1.xandor2.xor1.xnor1.c       8.35061e-19
+xadder1.xandor2.xor1._out1        -1.32915e-19
+xadder1._out2                     -8.95334e-19
+xadder1.xandor3.xand1._out1        4.94136e-24
+xadder1.xandor3.xand1.xnand1.c    -1.80541e-21
+xadder1.xandor3._out1             -1.09618e-24
+xadder1.xandor3.xor1.xnor1.c      -7.67619e-19
+xadder1.xandor3.xor1._out1        -6.47068e-19
+xadder1._out3                     -1.26665e-18
+xadder1.xxor1._out1               -5.72482e-26
+xadder1.xxor1.xnand1.c             2.16537e-23
+xadder1.xxor1._out2               -8.84035e-27
+xadder1.xxor1.xnand2.c             3.34289e-24
+xadder1.xxor1._out3                9.18643e-26
+xadder1.xxor1.xnand3.c            -3.47668e-23
+s1                                 5.11062e-26
+xadder1.xxor1.xnand4.c             -1.9321e-23
+xadder1.xxor2._out1               -2.24844e-25
+xadder1.xxor2.xnand1.c             8.49944e-23
+xadder1.xxor2._out2               -2.38994e-25
+xadder1.xxor2.xnand2.c             9.03942e-23
+xadder1.xxor2._out3               -1.25561e-27
+xadder1.xxor2.xnand3.c             4.74796e-25
+s2                                -1.36178e-26
+xadder1.xxor2.xnand4.c             5.15044e-24
+xadder1.xxor3._out1                8.57242e-26
+xadder1.xxor3.xnand1.c            -2.93908e-23
+xadder1.xxor3._out2                3.02046e-22
+xadder1.xxor3.xnand2.c             5.21322e-21
+xadder1.xxor3._out3               -1.26425e-25
+xadder1.xxor3.xnand3.c              4.8263e-23
+s3                                 9.46688e-23
+xadder1.xxor3.xnand4.c             3.06934e-21
+xadder1.xxor4._out1               -1.09026e-22
+xadder1.xxor4.xnand1.c              3.4611e-20
+xadder1.xxor4._out2                1.84763e-23
+xadder1.xxor4.xnand2.c             2.72594e-21
+xadder1.xxor4._out3               -1.12029e-18
+xadder1.xxor4.xnand3.c            -4.94483e-19
+s4                                -1.18491e-19
+xadder1.xxor4.xnand4.c             1.40777e-19
+_out1                              7.99565e-19
+_out2                              2.01389e-20
+v10#branch                         1.08416e-29
+v9#branch                                    0
+v8#branch                                    0
+v7#branch                                    0
+v6#branch                                    0
+v5#branch                                    0
+v4#branch                                    0
+v3#branch                                    0
+v2#branch                                    0
+v1#branch                                    0
+
+ Reference value :  0.00000e+00
+No. of Data Rows : 184
+
+  Measurements for Transient Analysis
+
+p2                  =  1.841919e-10 targ=  1.258324e-09 trig=  1.074132e-09
+andor1              =  7.205662e-11 targ=  1.299161e-09 trig=  1.227104e-09
+andor2              =  7.571277e-11 targ=  1.413138e-09 trig=  1.337425e-09
+andor3              =  6.214335e-11 targ=  1.517987e-09 trig=  1.455843e-09
+co                  =  9.767229e-11 targ=  1.632568e-09 trig=  1.534896e-09
+co                  =  6.297907e-10 targ=  1.632568e-09 trig=  1.002778e-09
+
+[?2004hngspice 1239 -> 
+[?2004l[?2004hngspice 1239 -> 
+[?2004l[?2004hngspice 1239 -> 
+[?2004l[?2004hngspice 1239 -> [?2004l[?2004hngspice 1239 -> ùquit[?2004l[?2004hngspice 1239 -> 

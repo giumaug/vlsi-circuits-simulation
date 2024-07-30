@@ -1,0 +1,150 @@
+ADDERx16
+
+v1 CI GND pwl 0 0ps
+
+v2 A1 GND pwl 0 0ps 1000ps 0 1050ps 1.8
+v3 B1 GND pwl 0 0ps 1000ps 0 1050ps 1.8
+v4 A2 GND pwl 0 0ps
+v5 B2 GND pwl 0 0ps 1000ps 0 1050ps 1.8
+v6 A3 GND pwl 0 0ps
+v7 B3 GND pwl 0 0ps 1000ps 0 1050ps 1.8
+v8 A4 GND pwl 0 0ps
+v9 B4 GND pwl 0 0ps 1000ps 0 1050ps 1.8
+
+v10 A5 GND pwl 0 0ps
+v11 B5 GND pwl 0 0ps 1000ps 0 1050ps 1.8
+v12 A6 GND pwl 0 0ps
+v13 B6 GND pwl 0 0ps 1000ps 0 1050ps 1.8
+v14 A7 GND pwl 0 0ps
+v15 B7 GND pwl 0 0ps 1000ps 0 1050ps 1.8
+v16 A8 GND pwl 0 0ps
+v17 B8 GND pwl 0 0ps 1000ps 0 1050ps 1.8
+
+v18 A9 GND pwl 0 0ps
+v19 B9 GND pwl 0 0ps 1000ps 0 1050ps 1.8
+v20 A10 GND pwl 0 0ps
+v21 B10 GND pwl 0 0ps 1000ps 0 1050ps 1.8
+v22 A11 GND pwl 0 0ps
+v23 B11 GND pwl 0 0ps 1000ps 0 1050ps 1.8
+v24 A12 GND pwl 0 0ps
+v25 B12 GND pwl 0 0ps 1000ps 0 1050ps 1.8
+
+v26 A13 GND pwl 0 0ps
+v27 B13 GND pwl 0 0ps 1000ps 0 1050ps 1.8
+v28 A14 GND pwl 0 0ps
+v29 B14 GND pwl 0 0ps 1000ps 0 1050ps 1.8
+v30 A15 GND pwl 0 0ps
+v31 B15 GND pwl 0 0ps 1000ps 0 1050ps 1.8
+v32 A16 GND pwl 0 0ps
+v33 B16 GND pwl 0 0ps
+
+v34 VDD GND pwl 0 1.8
+
+Xadder41 CI A1 B1 A2 B2 A3 B3 A4 B4 S1 S2 S3 S4 _CO1 VDD GND adder4
+Xadder42 _CO1 A5 B5 A6 B6 A7 B7 A8 B8 S5 S6 S7 S8 _CO2 VDD GND adder4
+Xadder43 _CO2 A9 B9 A10 B10 A11 B11 A12 B12 S9 S10 S11 S12 _CO3 VDD GND adder4
+Xadder44 _CO3 A13 B13 A14 B14 A15 B15 A16 B16 S13 S14 S15 S16 CO VDD GND adder4
+Xcarray_load1 CO _out1 VDD GND carry_load
+Xadder_load1 S16 _out2 VDD GND adder_load
+
+.measure tran s16 TRIG v(B1) VAL=0.1 RISE=1 TARG v(s16) VAL=1.79 RISE=1 CROSS=LAST
+
+.lib /opt/open_pdks/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+.options method=gear
+.tran 20ps 3000ps
+.save all
+
+.subckt adder4 CI A1 B1 A2 B2 A3 B3 A4 B4 S1 S2 S3 S4 CO VDD GND
+Xpg1 A1 B1 A2 B2 A3 B3 A4 B4 P1 G1 P2 G2 P3 G3 P4 G4 VDD GND pg
+Xcarry1 CI P1 G1 P2 G2 P3 G3 P4 G4 CO VDD GND carry 
+Xadder1 CI P1 G1 P2 G2 P3 G3 P4 S1 S2 S3 S4 VDD GND adder
+.ends
+
+.subckt carry CI P1 G1 P2 G2 P3 G3 P4 G4 CO VDD GND
+Xandor1 P2 G1 G2 _OUT1 VDD GND andor
+Xandor2 _OUT1 P3 G3 _OUT2 VDD GND andor
+Xandor3 _OUT2 P4 G4 _OUT3 VDD GND andor
+Xand4 P1 P2 P3 P4 _OUT4 VDD GND and4
+Xandor4 CI _OUT4 _OUT3 CO VDD GND andor
+.ends
+
+.subckt adder CI P1 G1 P2 G2 P3 G3 P4 S1 S2 S3 S4 VDD GND
+Xandor1 P1 CI G1 _OUT1 VDD GND andor
+Xandor2 P2 _OUT1 G2 _OUT2 VDD GND andor
+Xandor3 P3 _OUT2 G3 _OUT3 VDD GND andor
+Xxor1 CI P1 S1 VDD GND xor
+Xxor2 _OUT1 P2 S2 VDD GND xor
+Xxor3 _OUT2 P3 S3 VDD GND xor
+Xxor4 _OUT3 P4 S4 VDD GND xor
+.ends
+
+.subckt and4 IN1 IN2 IN3 IN4 OUT VDD GND
+Xnand1 IN1 IN2 _OUT1 VDD GND nand
+Xnand2 IN3 IN4 _OUT2 VDD GND nand
+Xnor _OUT1 _OUT2 OUT VDD GND nor
+.ends
+
+.subckt pg A1 B1 A2 B2 A3 B3 A4 B4 P1 G1 P2 G2 P3 G3 P4 G4 VDD GND
+Xxor1 A1 B1 P1 VDD GND xor
+Xand1 A1 B1 G1 VDD GND and
+Xxor2 A2 B2 P2 VDD GND xor
+Xand2 A2 B2 G2 VDD GND and
+Xxor3 A3 B3 P3 VDD GND xor
+Xand3 A3 B3 G3 VDD GND and
+Xxor4 A4 B4 P4 VDD GND xor
+Xand4 A4 B4 G4 VDD GND and
+.ends
+
+.subckt andor IN1 IN2 IN3 OUT VDD GND
+Xand1 IN1 IN2 _OUT1 VDD GND and
+Xor1 IN3 _OUT1 OUT VDD GND or
+.ends
+
+.subckt xor IN1 IN2 OUT VDD GND
+Xnand1 IN1 IN2 _OUT1 VDD GND nand 
+Xnand2 IN1 _OUT1 _OUT2 VDD GND nand
+Xnand3 IN2 _OUT1 _OUT3 VDD GND nand
+Xnand4 _OUT2 _OUT3 OUT VDD GND nand
+.ends
+
+.subckt and IN1 IN2 OUT VDD GND
+Xnand1 IN1 IN2 _OUT1 VDD GND nand
+Xinv1 _OUT1 OUT VDD GND inv
+.ends
+
+.subckt or IN1 IN2 OUT VDD GND
+Xnor1 IN1 IN2 _OUT1 VDD GND nor
+Xinv1 _OUT1 OUT VDD GND inv
+.ends
+
+.subckt nand IN1 IN2 OUT VDD GND WN=2e+06u WP=2e+06u
+X0 OUT IN1 VDD VDD sky130_fd_pr__pfet_01v8 ad='W*L' pd='2*W+2*L' as='W*L' ps='2*W+2*L' W={WP} L=150000u
+X1 OUT IN2 VDD VDD sky130_fd_pr__pfet_01v8 ad='W*L' pd='2*W+2*L' as='W*L' ps='2*W+2*L' W={WP} L=150000u
+X2 OUT IN1 C GND sky130_fd_pr__nfet_01v8 ad='W*L' pd='2*W+2*L' as='W*L' ps='2*W+2*L' W={WN} L=150000u
+X3 C IN2 GND GND sky130_fd_pr__nfet_01v8 ad='W*L' pd='2*W+2*L' as='W*L' ps='2*W+2*L' W={WN} L=150000u
+.ends
+
+.subckt nor IN1 IN2 OUT VDD GND WN=1e+06u WP=4e+06u
+X0 C IN1 VDD VDD sky130_fd_pr__pfet_01v8 ad='W*L' pd='2*W+2*L' as='W*L' ps='2*W+2*L' W={WP} L=150000u
+X1 OUT IN2 C VDD sky130_fd_pr__pfet_01v8 ad='W*L' pd='2*W+2*L' as='W*L' ps='2*W+2*L' W={WP} L=150000u
+X2 OUT IN1 GND GND sky130_fd_pr__nfet_01v8 ad='W*L' pd='2*W+2*L' as='W*L' ps='2*W+2*L' W={WN} L=150000u
+X3 OUT IN2 GND GND sky130_fd_pr__nfet_01v8 ad='W*L' pd='2*W+2*L' as='W*L' ps='2*W+2*L' W={WN} L=150000u
+.ends
+
+.subckt inv IN OUT VDD GND WN=1e+06u WP=2e+06u
+X0 OUT IN GND GND sky130_fd_pr__nfet_01v8 ad='W*L' pd='2*W+2*L' as='W*L' ps='2*W+2*L' W={WN} L=150000u
+X1 OUT IN VDD VDD sky130_fd_pr__pfet_01v8 ad='W*L' pd='2*W+2*L' as='W*L' ps='2*W+2*L' W={WP} L=150000u
+.ends
+
+.subckt carry_load IN OUT VDD GND WN=4e+06u WP=8e+06u
+X0 OUT IN GND GND sky130_fd_pr__nfet_01v8 ad='W*L' pd='2*W+2*L' as='W*L' ps='2*W+2*L' W={WN} L=150000u
+X1 OUT IN VDD VDD sky130_fd_pr__pfet_01v8 ad='W*L' pd='2*W+2*L' as='W*L' ps='2*W+2*L' W={WP} L=150000u
+.ends
+
+.subckt adder_load IN OUT VDD GND WN=3e+06u WP=6e+06u
+X0 OUT IN GND GND sky130_fd_pr__nfet_01v8 ad='W*L' pd='2*W+2*L' as='W*L' ps='2*W+2*L' W={WN} L=150000u
+X1 OUT IN VDD VDD sky130_fd_pr__pfet_01v8 ad='W*L' pd='2*W+2*L' as='W*L' ps='2*W+2*L' W={WP} L=150000u
+.ends
+
+.GLOBAL GND
+.end

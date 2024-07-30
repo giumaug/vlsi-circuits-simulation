@@ -1,0 +1,28 @@
+build
+
+https://xschem.sourceforge.io/stefan/xschem_man/tutorial_xschem_sky130.html
+https://www.bananatronics.org/first-steps-with-google-skywater-pdk-free-open-source-silicon-for-everyone/
+https://lootr5858.wordpress.com/2020/10/06/magic-vlsi-skywater-pdk-local-installation-guide/
+
+Le libreria skywater con i simboli per xschem si trovano /opt/open_pdks/share/pdk (vedi esempio transistor)
+
+tutorial
+
+1)inverter (inverter)
+https://github.com/bluecmd/learn-sky130/blob/main/schematic/xschem/getting-started.md
+
+2)transcaratteristica (transistor)
+https://github.com/D-curs-D/Inverter-design-and-analysis-using-sky130pdk
+
+3)magic
+https://www.bananatronics.org/first-steps-with-google-skywater-pdk-free-open-source-silicon-for-everyone/
+https://www.youtube.com/watch?v=RPppaGdjbj0
+https://diychip.org/sky130/sky130_fd_sc_hd/cells/inv/ (documentazione layout standard cell)
+
+
+LVS
+1)https://www.youtube.com/watch?v=NCaNF4EunYU part 1
+2)https://www.youtube.com/watch?v=_xsZbaTBEEA part 2
+
+NOTA:
+I puntamenti corretti per le librerie skywater sono quelli di xschemrc di transistor.

@@ -1,0 +1,55 @@
+ADDER CON PORTE MINIME
+
+0101 + 1100 = 10010 CI=1 +
+0100 + 0110 = 1011  CI=1 +
+0011 + 1110 = 10010 CI=1 +
+1101 + 1111 = 11100 CI=0 +
+1001 + 0000 = 1001  CI=0 +
+
+CASO PEGGIORE CO 4BIT
+
+A =0001
+B =1111
+
+delay base=7.164102e-10
+delay ottimizzato=6.354784e-10
+speedup=12%
+
+CASO PEGGIORE S4 4BIT
+
+CI=1
+A =0000
+B =0111
+
+delay base=7.433462e-10
+delay ottimizzato=6.900052e-10
+speedup=7%
+
+
+CASO PEGGIORE 16 BIT
+A =0000 0000 0000 0001
+B =0111 1111 1111 1111
+
+delay base=1.557696e-09
+delay ottimizzato=1.434350e-09
+speedup=8%
+Stima frequenza= 1/1.557696e-09 645MHZ
+                 1/1.434350e-09 699MHZ
+
+CASO PEGGIORE 64 BIT
+A =0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0001
+B =0111 1111 1111 1111 1111 1111 1111 1111 1111 1111 1111 1111 1111 1111 1111 1111
+
+delay base=3.503583e-09
+delay ottimizzato=3.135905e-09
+speedup=11%
+Stima frequenza=1/3.503583e-09 285MHZ
+                1/3.135905e-09 319MHZ
+
+        
+
+
+
+
+
+

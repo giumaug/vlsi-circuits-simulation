@@ -1,0 +1,17 @@
+Ottimizzazione predetta:
+
+42 + 120 = 162
+46 + 123 = 169
+
+169:100 = 162:x 95,85 -> 5%
+
+Ottimizzazione calcolata:
+
+7,16:100 = 6,35:x 88,68 -> 12%
+
+
+
+
+
+
+

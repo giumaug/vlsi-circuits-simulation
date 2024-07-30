@@ -1,0 +1,60 @@
+340
+
+Considero una porta che pilota 4 copie di se stessa quindi h=4.
+
+inv 1-1 nand 4/3 -2  nor 5/3 -2
+
+inv
+d = 1*4 + 1 = 5
+d = 0,33*4 + 0,66 = 1.98
+speed-up 2.52
+
+nand 
+d = (4/3)*4 + 2 = 7.33
+d = (2/3)*4 + 1 = 3.66
+speed-up 2
+
+nor
+d = (5/3)*4 + 2 = 8.66
+d = (1/3)*4 + 1 = 2.33
+speed-up > 3.7
+
+domino inv
+d = 1*4 + 1 = 5
+d = (5/18)*4 + 0,66 + 0,83 = 2,60       [(2,5/3) = 0,83]
+speed-up = 1,92
+
+domino nand
+d = (4/3)*4 + 2 = 7.33
+d = 4*(5/6)*(2/3) + 1 + 0,83 = 4,05
+speed-up = 1,80
+
+domino nor
+d = (5/3)*4 + 2 = 8.66
+d = 4*(5/6)*(1/3) + 1 + 0,83 = 2,93
+speed-up = 2,95
+
+domino footed inv
+d = 1*4 + 1 = 5
+d = 4*(5/6)*(2/3) + 1 + 0,83 = 4,05
+speed-up = 1,23
+
+domino footed nand
+d = (4/3)*4 + 2 = 7.33
+d = 4*(5/6)*1 + (4/3) + 0,83 = 5,49
+speed-up = 1,33
+
+domino footed nor
+d = (4/3)*4 + 2 = 7.33
+d = 4*(5/6)*(2/3) + (5/3) + 0,83 = 4,71
+speed-up = 1,55
+
+
+
+
+
+
+
+
+
+

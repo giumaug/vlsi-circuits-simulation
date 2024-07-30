@@ -1,0 +1,9 @@
+pg 
+and W=1
+xor final and W=2
+
+carry final inv W=2
+
+adder
+PG3 W=2 inverter
+

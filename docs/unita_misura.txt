@@ -1,0 +1,7 @@
+Un centimetro e' 10000 micron
+Un nanometro e' 1000 micron
+
+????
+Il valore di box size va moltiplicato per 10 per ottenere la dimensione in nanometri
+     
+
